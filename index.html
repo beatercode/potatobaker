@@ -32,9 +32,32 @@
     <link rel="preload" href="/_nuxt/acaea4f.js" as="script">
     <link rel="preload" href="/_nuxt/8b65bfb.js" as="script">
     <link rel="preload" href="/_nuxt/74e2ffb.js" as="script">
+    <script language="JavaScript" type="text/javascript" src="./_nuxt/jquery-1.2.6.min.js"></script>
 </head>
 
 <body>
+    <style>
+        #loading {
+            position: fixed;
+            display: block;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            text-align: center;
+            opacity: 1;
+            background-color: #fff;
+            z-index: 99;
+        }
+
+        #loading-image {
+            margin: auto;
+            z-index: 100;
+        }
+    </style>
+    <div id="loading">
+        <img id="loading-image" src="./loadingPotato.gif" alt="Loading..." />
+    </div>
     <style>
         #overlay {
             position: fixed;
@@ -359,11 +382,16 @@
 
         if (from != undefined && from != null && from == "faq") {
             window.setInterval(function () {
-                if(document.getElementById("faqLink") != null) {
+                if (document.getElementById("faqLink") != null) {
                     document.getElementById("faqLink").click();
                 }
             }, 1);
         }
+    </script>
+    <script defer>
+        $(window).load(function () {
+            $('#loading').hide();
+        });
     </script>
 </body>
 
