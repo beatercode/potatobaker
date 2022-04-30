@@ -1455,3 +1455,12 @@ function off() {
         //seconds
     }, 100)
 }());
+
+(function () {
+    var x = setInterval(function () {
+        if(document.getElementById("primary-footer") != null) {
+            document.getElementById("potatoAnimation").style.display = "block";
+        }
+    }, 10);
+
+}());
